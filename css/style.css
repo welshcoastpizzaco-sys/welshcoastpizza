@@ -187,28 +187,14 @@ a:hover {
 }
 
 /* --- Wave dividers --- */
-.wave-divider {
-  position: relative;
-  width: 100%;
-  line-height: 0;
-  margin-top: -1px;
-}
-
-.wave-divider svg {
-  display: block;
+.wave-bottom {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
   width: 100%;
   height: 60px;
-}
-
-.wave-divider--hero {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: block;
   z-index: 2;
-}
-
-.wave-divider--footer {
-  background: var(--cream);
 }
 
 /* --- Buttons --- */
@@ -252,7 +238,8 @@ a:hover {
 
 /* --- Sections (shared) --- */
 .section {
-  padding: 72px 0;
+  position: relative;
+  padding: 72px 0 120px;
 }
 
 .section__title {
@@ -287,8 +274,6 @@ a:hover {
 /* --- About --- */
 .about {
   background: var(--white);
-  position: relative;
-  overflow: hidden;
 }
 
 .about__content {
@@ -305,8 +290,6 @@ a:hover {
 
 /* --- Menu --- */
 .menu {
-  position: relative;
-  overflow: hidden;
   background: linear-gradient(135deg, var(--cream) 0%, #e8f0ee 40%, #f5ebe3 70%, var(--cream) 100%);
 }
 
@@ -360,8 +343,6 @@ a:hover {
 /* --- Find Us / Events --- */
 .find-us {
   background: var(--white);
-  position: relative;
-  overflow: hidden;
 }
 
 .events__grid {
@@ -438,6 +419,10 @@ a:hover {
 }
 
 /* --- Contact --- */
+.contact {
+  padding-bottom: 72px;
+}
+
 .contact__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -624,8 +609,16 @@ a:hover {
     flex-direction: row;
   }
 
-  .wave-divider svg {
+  .wave-bottom {
     height: 80px;
+  }
+
+  .section {
+    padding-bottom: 140px;
+  }
+
+  .contact {
+    padding-bottom: 96px;
   }
 }
 
