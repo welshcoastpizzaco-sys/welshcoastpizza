@@ -4,16 +4,15 @@
   'use strict';
 
   // --- Mobile nav toggle ---
-  const hamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('nav');
+  var hamburger = document.getElementById('hamburger');
+  var nav = document.getElementById('nav');
 
   hamburger.addEventListener('click', function () {
-    const isOpen = nav.classList.toggle('open');
+    var isOpen = nav.classList.toggle('open');
     hamburger.classList.toggle('active');
     hamburger.setAttribute('aria-expanded', isOpen);
   });
 
-  // Close mobile nav when a link is clicked
   nav.querySelectorAll('.nav__link').forEach(function (link) {
     link.addEventListener('click', function () {
       nav.classList.remove('open');
@@ -23,7 +22,7 @@
   });
 
   // --- Header shadow on scroll ---
-  const header = document.getElementById('header');
+  var header = document.getElementById('header');
 
   window.addEventListener('scroll', function () {
     if (window.scrollY > 10) {
@@ -37,12 +36,44 @@
   var form = document.getElementById('contact-form');
 
   form.addEventListener('submit', function (e) {
-    // If using Formspree with a real endpoint, let it submit normally.
-    // For now, prevent default and show a confirmation.
     if (form.action.includes('placeholder')) {
       e.preventDefault();
       alert('Thanks for your message! We\'ll get back to you soon.');
       form.reset();
     }
   });
+
+  // --- Load menu from JSON ---
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  fetch('data/menu.json')
+    .then(function (res) { return res.json(); })
+    .then(function (items) {
+      var grid = document.getElementById('menu-grid');
+      grid.innerHTML = items.map(function (item) {
+        return '<div class="menu__card">' +
+          '<h3 class="menu__name">' + escapeHtml(item.name) + '</h3>' +
+          '<p class="menu__desc">' + escapeHtml(item.description) + '</p>' +
+          '</div>';
+      }).join('');
+    });
+
+  // --- Load events from JSON ---
+  fetch('data/events.json')
+    .then(function (res) { return res.json(); })
+    .then(function (events) {
+      var grid = document.getElementById('events-grid');
+      grid.innerHTML = events.map(function (evt) {
+        return '<div class="event__card">' +
+          '<span class="event__date">' + escapeHtml(evt.date) + '</span>' +
+          '<h3 class="event__location">' + escapeHtml(evt.location) + '</h3>' +
+          '<p class="event__details">' + escapeHtml(evt.details) + '</p>' +
+          '</div>';
+      }).join('');
+    });
+
 })();

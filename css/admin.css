@@ -1,0 +1,337 @@
+/* ===========================
+   Admin Panel — Welsh Coast Pizza Co.
+   =========================== */
+
+:root {
+  --cream: #faf6f0;
+  --red: #c0392b;
+  --red-dark: #a93226;
+  --teal: #1a7a6d;
+  --teal-light: #2bb5a0;
+  --brown: #3b2f2f;
+  --charcoal: #2c2c2c;
+  --white: #ffffff;
+  --grey-light: #f0ebe4;
+  --grey-mid: #c4b9ab;
+  --green: #27ae60;
+  --font-display: 'Lobster', cursive;
+  --font-body: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--grey-light);
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+.hidden { display: none !important; }
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  border: none;
+  font-family: var(--font-body);
+}
+
+.btn--primary {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--teal-light);
+}
+
+.btn--secondary {
+  background: var(--brown);
+  color: var(--white);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--brown);
+  border: 1px solid var(--grey-mid);
+}
+
+.btn--outline:hover {
+  background: var(--cream);
+}
+
+.btn--small {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+}
+
+.btn--danger {
+  background: var(--red);
+  color: var(--white);
+}
+
+.btn--danger:hover {
+  background: var(--red-dark);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Login Screen --- */
+.login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--cream);
+}
+
+.login__card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.login__logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+}
+
+.login__title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--brown);
+  margin-bottom: 24px;
+}
+
+.login__hint {
+  font-size: 0.9rem;
+  color: var(--grey-mid);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.login__error {
+  color: var(--red);
+  font-size: 0.9rem;
+  margin-top: 12px;
+  min-height: 1.2em;
+}
+
+/* --- Form --- */
+.form__group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.form__group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--brown);
+  font-size: 0.9rem;
+}
+
+.form__group input,
+.form__group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--grey-mid);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--white);
+  transition: border-color 0.2s;
+}
+
+.form__group input:focus,
+.form__group textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.login .btn {
+  width: 100%;
+}
+
+/* --- Admin Header --- */
+.admin-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--grey-light);
+  padding: 0 20px;
+}
+
+.admin-header__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.admin-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--brown);
+}
+
+.admin-header__brand img {
+  border-radius: 50%;
+}
+
+.admin-header__actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* --- Status Bar --- */
+.status-bar {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 0;
+  transition: min-height 0.3s;
+}
+
+.status-bar.visible {
+  min-height: 40px;
+  padding-top: 16px;
+}
+
+.status-bar span {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status-bar.success span {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-bar.error span {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-bar.saving span {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* --- Admin Main --- */
+.admin-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+/* --- Editor Section --- */
+.editor-section {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.editor-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.editor-section__header h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--brown);
+}
+
+/* --- Editor List Items --- */
+.editor-item {
+  border: 1px solid var(--grey-light);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  position: relative;
+  background: var(--cream);
+}
+
+.editor-item__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.editor-item__row {
+  display: flex;
+  gap: 12px;
+}
+
+.editor-item__row .form__group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.editor-item__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn--icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  color: var(--grey-mid);
+  transition: color 0.2s;
+}
+
+.btn--icon:hover {
+  color: var(--red);
+}
+
+.editor-section > .btn {
+  margin-top: 16px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .editor-item__row {
+    flex-direction: column;
+  }
+
+  .admin-header__actions .btn span {
+    display: none;
+  }
+}

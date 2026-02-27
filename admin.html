@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Welsh Coast Pizza Co.</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="icon" href="images/logo.jpeg" type="image/png">
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div class="login" id="login-screen">
+    <div class="login__card">
+      <img src="images/logo.jpeg" alt="Welsh Coast Pizza Co." class="login__logo">
+      <h1 class="login__title">Admin Panel</h1>
+      <form id="login-form">
+        <div class="form__group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn--primary">Log In</button>
+        <p class="login__error" id="login-error"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Token Screen -->
+  <div class="login hidden" id="token-screen">
+    <div class="login__card">
+      <h1 class="login__title">GitHub Access</h1>
+      <p class="login__hint">Enter your GitHub Personal Access Token to enable saving. This is stored only for this browser session.</p>
+      <form id="token-form">
+        <div class="form__group">
+          <label for="gh-token">GitHub Token</label>
+          <input type="password" id="gh-token" required placeholder="ghp_...">
+        </div>
+        <button type="submit" class="btn btn--primary">Connect</button>
+        <p class="login__error" id="token-error"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard -->
+  <div class="dashboard hidden" id="dashboard">
+    <header class="admin-header">
+      <div class="admin-header__inner">
+        <div class="admin-header__brand">
+          <img src="images/logo.jpeg" alt="" width="36" height="36">
+          <span>Admin Panel</span>
+        </div>
+        <div class="admin-header__actions">
+          <a href="index.html" class="btn btn--small btn--secondary" target="_blank">View Site</a>
+          <button class="btn btn--small btn--outline" id="logout-btn">Log Out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <!-- Status bar -->
+      <div class="status-bar" id="status-bar">
+        <span id="status-msg"></span>
+      </div>
+
+      <!-- Menu Editor -->
+      <section class="editor-section">
+        <div class="editor-section__header">
+          <h2>Menu</h2>
+          <button class="btn btn--small btn--primary" id="add-menu-btn">+ Add Pizza</button>
+        </div>
+        <div class="editor-list" id="menu-list">
+          <!-- Populated by JS -->
+        </div>
+        <button class="btn btn--primary" id="save-menu-btn">Save Menu</button>
+      </section>
+
+      <!-- Events Editor -->
+      <section class="editor-section">
+        <div class="editor-section__header">
+          <h2>Events</h2>
+          <button class="btn btn--small btn--primary" id="add-event-btn">+ Add Event</button>
+        </div>
+        <div class="editor-list" id="events-list">
+          <!-- Populated by JS -->
+        </div>
+        <button class="btn btn--primary" id="save-events-btn">Save Events</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

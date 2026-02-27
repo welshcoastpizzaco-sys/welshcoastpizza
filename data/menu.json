@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Margherita",
+    "description": "San Marzano tomato, fior di latte mozzarella, fresh basil, extra virgin olive oil"
+  },
+  {
+    "name": "Marinara",
+    "description": "San Marzano tomato, garlic, oregano, extra virgin olive oil. No cheese, all flavour"
+  },
+  {
+    "name": "'Nduja",
+    "description": "Spicy Calabrian 'nduja sausage, San Marzano tomato, fior di latte, fresh basil"
+  },
+  {
+    "name": "Fiorentina",
+    "description": "Spinach, egg, fior di latte mozzarella, garlic, Parmigiano-Reggiano"
+  },
+  {
+    "name": "Pepperoni",
+    "description": "Spicy pepperoni, San Marzano tomato, fior di latte mozzarella, a drizzle of hot honey"
+  },
+  {
+    "name": "Funghi",
+    "description": "Mixed wild mushrooms, truffle cream, fior di latte, thyme, Parmigiano-Reggiano"
+  },
+  {
+    "name": "Prosciutto e Rucola",
+    "description": "Prosciutto di Parma, rocket, shaved Parmigiano-Reggiano, fior di latte, balsamic glaze"
+  },
+  {
+    "name": "Welsh Special",
+    "description": "Caerphilly cheese, leek, smoked bacon, fior di latte, cracked black pepper"
+  }
+]
