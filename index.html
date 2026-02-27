@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welsh Coast Pizza Co. — Neapolitan Stonebaked Pizza on the Welsh Coast</title>
+  <meta name="description" content="Welsh Coast Pizza Co. brings authentic Neapolitan stonebaked pizza to the beautiful Welsh coastline. Find us at popup events along the coast.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.jpeg" type="image/png">
+</head>
+<body>
+
+  <!-- Header / Nav -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo">
+        <img src="images/logo.jpeg" alt="Welsh Coast Pizza Co." width="50" height="50">
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#menu" class="nav__link">Menu</a></li>
+          <li><a href="#find-us" class="nav__link">Find Us</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <img src="images/logo.jpeg" alt="Welsh Coast Pizza Co." class="hero__logo">
+      <p class="hero__tagline">Neapolitan stonebaked pizza on the Welsh coast</p>
+      <div class="hero__ctas">
+        <a href="#menu" class="btn btn--primary">See Our Menu</a>
+        <a href="#find-us" class="btn btn--secondary">Find Us</a>
+      </div>
+    </div>
+    <div class="wave-divider wave-divider--hero">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,64 L1440,120 L0,120 Z" fill="var(--white)"/></svg>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <h2 class="section__title">Our Story</h2>
+      <div class="about__content">
+        <p>Welsh Coast Pizza Co. was born from a love of great food, good waves, and the stunning Welsh coastline. We're a popup pizza business bringing authentic Neapolitan stonebaked pizza to beaches, surf spots, markets, and events right along the coast.</p>
+        <p>Every pizza starts with our slow-fermented dough, made fresh daily and cooked at blistering heat in our stone oven. We source the finest ingredients — San Marzano tomatoes, fior di latte mozzarella, and locally sourced toppings wherever we can — because proper pizza deserves proper ingredients.</p>
+        <p>From Pembrokeshire to the Gower, Anglesey to Cardigan Bay, you'll find us parked up wherever the swell is rolling in and the sunsets are firing. We believe great pizza should be enjoyed with sand between your toes, salt in the air, and your board drying off nearby.</p>
+      </div>
+    </div>
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,64 L1440,120 L0,120 Z" fill="var(--cream)"/></svg>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="section menu" id="menu">
+    <div class="container">
+      <h2 class="section__title">Our Pizzas</h2>
+      <p class="section__subtitle">Hand-stretched, stonebaked &amp; served straight from the shore</p>
+      <div class="menu__grid">
+
+        <div class="menu__card">
+          <h3 class="menu__name">Margherita</h3>
+          <p class="menu__desc">San Marzano tomato, fior di latte mozzarella, fresh basil, extra virgin olive oil</p>
+          <span class="menu__price">&pound;9</span>
+        </div>
+
+        <div class="menu__card">
+          <h3 class="menu__name">Marinara</h3>
+          <p class="menu__desc">San Marzano tomato, garlic, oregano, extra virgin olive oil. No cheese, all flavour</p>
+          <span class="menu__price">&pound;7</span>
+        </div>
+
+        <div class="menu__card">
+          <h3 class="menu__name">'Nduja</h3>
+          <p class="menu__desc">Spicy Calabrian 'nduja sausage, San Marzano tomato, fior di latte, fresh basil</p>
+          <span class="menu__price">&pound;11</span>
+        </div>
+
+        <div class="menu__card">
+          <h3 class="menu__name">Fiorentina</h3>
+          <p class="menu__desc">Spinach, egg, fior di latte mozzarella, garlic, Parmigiano-Reggiano</p>
+          <span class="menu__price">&pound;11</span>
+        </div>
+
+        <div class="menu__card">
+          <h3 class="menu__name">Pepperoni</h3>
+          <p class="menu__desc">Spicy pepperoni, San Marzano tomato, fior di latte mozzarella, a drizzle of hot honey</p>
+          <span class="menu__price">&pound;11</span>
+        </div>
+
+        <div class="menu__card">
+          <h3 class="menu__name">Funghi</h3>
+          <p class="menu__desc">Mixed wild mushrooms, truffle cream, fior di latte, thyme, Parmigiano-Reggiano</p>
+          <span class="menu__price">&pound;11</span>
+        </div>
+
+        <div class="menu__card">
+          <h3 class="menu__name">Prosciutto e Rucola</h3>
+          <p class="menu__desc">Prosciutto di Parma, rocket, shaved Parmigiano-Reggiano, fior di latte, balsamic glaze</p>
+          <span class="menu__price">&pound;12</span>
+        </div>
+
+        <div class="menu__card">
+          <h3 class="menu__name">Welsh Special</h3>
+          <p class="menu__desc">Caerphilly cheese, leek, smoked bacon, fior di latte, cracked black pepper</p>
+          <span class="menu__price">&pound;12</span>
+        </div>
+
+      </div>
+      <p class="menu__note">We also run seasonal specials — follow us on Instagram to see what's coming out of the oven next.</p>
+    </div>
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,64 L1440,120 L0,120 Z" fill="var(--white)"/></svg>
+    </div>
+  </section>
+
+  <!-- Find Us / Events Section -->
+  <section class="section find-us" id="find-us">
+    <div class="container">
+      <h2 class="section__title">Find Us</h2>
+      <p class="section__subtitle">Catch the next wave of pizza at these upcoming spots</p>
+      <div class="events__grid">
+
+        <div class="event__card">
+          <span class="event__date">Sat 8 March</span>
+          <h3 class="event__location">Mumbles, Gower</h3>
+          <p class="event__details">Mumbles Makers Market, Oystermouth Square. 11am – 8pm.</p>
+        </div>
+
+        <div class="event__card">
+          <span class="event__date">Sat 15 March</span>
+          <h3 class="event__location">Tenby, Pembrokeshire</h3>
+          <p class="event__details">South Beach car park, next to the harbour. 12pm – 7pm.</p>
+        </div>
+
+        <div class="event__card">
+          <span class="event__date">Sat 22 March</span>
+          <h3 class="event__location">Aberystwyth, Ceredigion</h3>
+          <p class="event__details">Prom Bandstand area, Aberystwyth seafront. 12pm – 8pm.</p>
+        </div>
+
+        <div class="event__card">
+          <span class="event__date">Sat 29 March</span>
+          <h3 class="event__location">Rhossili, Gower</h3>
+          <p class="event__details">National Trust car park. Sunset session 3pm – 8pm.</p>
+        </div>
+
+      </div>
+      <p class="find-us__cta">Follow us on <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> for the latest dates and last-minute popups.</p>
+    </div>
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,64 L1440,120 L0,120 Z" fill="var(--cream)"/></svg>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2 class="section__title">Get in Touch</h2>
+      <p class="section__subtitle">Want us at your event? Planning a surf comp? Drop us a line.</p>
+      <div class="contact__grid">
+        <form class="contact__form" id="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+          <div class="form__group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form__group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form__group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Send Message</button>
+        </form>
+        <div class="contact__info">
+          <div class="contact__item">
+            <h3>Email</h3>
+            <a href="mailto:hello@welshcoastpizza.co.uk">hello@welshcoastpizza.co.uk</a>
+          </div>
+          <div class="contact__item">
+            <h3>Phone</h3>
+            <a href="tel:+447000000000">07000 000 000</a>
+          </div>
+          <div class="contact__item">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="wave-divider wave-divider--footer">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64 C360,120 720,0 1080,64 C1260,96 1380,80 1440,64 L1440,120 L0,120 Z" fill="var(--brown)"/></svg>
+  </div>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="images/logo.jpeg" alt="Welsh Coast Pizza Co." width="40" height="40">
+        <p>&copy; 2026 Welsh Coast Pizza Co. &mdash; Surf. Eat. Repeat.</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#find-us">Find Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
