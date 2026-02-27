@@ -85,12 +85,14 @@ a:hover {
 
 .header__logo img {
   border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .nav__list {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: clamp(16px, 3vw, 28px);
 }
 
 .nav__link {
@@ -114,12 +116,16 @@ a:hover {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .hamburger span {
   display: block;
-  width: 26px;
+  width: 24px;
   height: 3px;
   background: var(--brown);
   border-radius: 2px;
@@ -141,12 +147,12 @@ a:hover {
 /* --- Hero --- */
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: clamp(500px, 85vh, 900px);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url('../images/hero.jpg') center center / cover no-repeat;
+  background: url('../images/hero-mobile.jpg') center center / cover no-repeat;
   overflow: hidden;
   padding-bottom: 60px;
 }
@@ -169,11 +175,13 @@ a:hover {
   border-radius: 50%;
   margin: 0 auto 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .hero__tagline {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
   color: var(--white);
   margin-bottom: 32px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -192,7 +200,7 @@ a:hover {
   bottom: -1px;
   left: 0;
   width: 100%;
-  height: 60px;
+  height: clamp(60px, 8vh, 100px);
   display: block;
   z-index: 2;
 }
@@ -209,6 +217,7 @@ a:hover {
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
   border: none;
+  min-height: 48px;
 }
 
 .btn:hover {
@@ -244,7 +253,7 @@ a:hover {
 
 .section__title {
   font-family: var(--font-display);
-  font-size: 2.4rem;
+  font-size: clamp(2rem, 5vw, 2.8rem);
   color: var(--brown);
   text-align: center;
   margin-bottom: 12px;
@@ -267,7 +276,7 @@ a:hover {
 .section__subtitle {
   text-align: center;
   color: var(--grey-mid);
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 1vw, 1.1rem);
   margin-bottom: 40px;
 }
 
@@ -300,7 +309,7 @@ a:hover {
 .menu__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: clamp(16px, 2.5vw, 24px);
   margin-bottom: 32px;
 }
 
@@ -352,7 +361,7 @@ a:hover {
 .events__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: clamp(16px, 2.5vw, 24px);
   margin-bottom: 32px;
 }
 
@@ -457,13 +466,14 @@ a:hover {
 .form__group input,
 .form__group textarea {
   width: 100%;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border: 1px solid var(--grey-mid);
   border-radius: 8px;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 16px;
   background: var(--white);
   transition: border-color 0.2s;
+  min-height: 48px;
 }
 
 .form__group input:focus,
@@ -534,6 +544,8 @@ a:hover {
 
 .footer__brand img {
   border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .footer__brand p {
@@ -573,10 +585,21 @@ a:hover {
   color: var(--white);
 }
 
+/* --- Loading state --- */
+.loading-text {
+  text-align: center;
+  color: var(--grey-mid);
+  padding: 20px;
+}
+
 /* ===========================
    Responsive — Tablet+
    =========================== */
 @media (min-width: 600px) {
+  .hero {
+    background-image: url('../images/hero-tablet.jpg');
+  }
+
   .menu__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -594,21 +617,17 @@ a:hover {
    Responsive — Desktop
    =========================== */
 @media (min-width: 900px) {
+  .hero {
+    background-image: url('../images/hero.jpg');
+  }
+
   .hero__logo {
     width: 220px;
     height: 220px;
   }
 
-  .hero__tagline {
-    font-size: 2.4rem;
-  }
-
   .section {
-    padding: 96px 0;
-  }
-
-  .section__title {
-    font-size: 2.8rem;
+    padding: 96px 0 140px;
   }
 
   .footer__inner {
@@ -621,16 +640,17 @@ a:hover {
     flex-direction: row;
   }
 
-  .wave-bottom {
-    height: 80px;
-  }
-
-  .section {
-    padding-bottom: 140px;
-  }
-
   .contact {
     padding-bottom: 96px;
+  }
+}
+
+/* ===========================
+   Responsive — Wide desktop
+   =========================== */
+@media (min-width: 1200px) {
+  .menu__grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -666,5 +686,20 @@ a:hover {
 
   .nav__link {
     font-size: 1.1rem;
+  }
+}
+
+/* ===========================
+   Responsive — Landscape mobile
+   =========================== */
+@media (max-height: 500px) {
+  .hero {
+    min-height: 100vh;
+    padding: 60px 20px 40px;
+  }
+
+  .hero__logo {
+    width: 120px;
+    height: 120px;
   }
 }

@@ -9,7 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="images/logo.jpeg" type="image/png">
+  <link rel="preload" as="image" href="images/hero-mobile.jpg" media="(max-width: 599px)">
+  <link rel="preload" as="image" href="images/hero-tablet.jpg" media="(min-width: 600px) and (max-width: 899px)">
+  <link rel="preload" as="image" href="images/hero.jpg" media="(min-width: 900px)">
+  <link rel="icon" href="images/logo-50.jpeg" type="image/jpeg">
 </head>
 <body>
 
@@ -17,7 +20,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#" class="header__logo">
-        <img src="images/logo.jpeg" alt="Welsh Coast Pizza Co." width="50" height="50">
+        <img src="images/logo-100.jpeg" alt="Welsh Coast Pizza Co." width="50" height="50">
       </a>
       <nav class="nav" id="nav">
         <ul class="nav__list">
@@ -39,7 +42,7 @@
   <section class="hero" id="hero">
     <div class="hero__overlay"></div>
     <div class="container hero__content">
-      <img src="images/logo.jpeg" alt="Welsh Coast Pizza Co." class="hero__logo">
+      <img src="images/logo-220.jpeg" srcset="images/logo-220.jpeg 220w, images/logo.jpeg 440w" sizes="(min-width: 900px) 220px, 180px" alt="Welsh Coast Pizza Co." class="hero__logo">
       <p class="hero__tagline">Neapolitan stonebaked pizza on the Welsh coast</p>
       <div class="hero__ctas">
         <a href="#menu" class="btn btn--primary">See Our Menu</a>
@@ -142,7 +145,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <img src="images/logo.jpeg" alt="Welsh Coast Pizza Co." width="40" height="40">
+        <img src="images/logo-100.jpeg" alt="Welsh Coast Pizza Co." width="40" height="40">
         <p>&copy; 2026 Welsh Coast Pizza Co. &mdash; Surf. Eat. Repeat.</p>
       </div>
       <nav class="footer__nav">
