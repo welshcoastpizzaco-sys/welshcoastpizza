@@ -76,4 +76,42 @@
       eventsGrid.innerHTML = '<p class="loading-text">Unable to load events. Please refresh.</p>';
     });
 
+  // --- Load FAQ from JSON ---
+  var faqList = document.getElementById('faq-list');
+  var faqSchema = document.getElementById('faq-schema');
+  faqList.innerHTML = '<p class="loading-text">Loading FAQ...</p>';
+
+  fetch('data/faq.json')
+    .then(function (res) { return res.json(); })
+    .then(function (faqs) {
+      faqList.innerHTML = faqs.map(function (faq) {
+        return '<details class="faq__item">' +
+          '<summary class="faq__question">' + escapeHtml(faq.question) + '</summary>' +
+          '<p class="faq__answer">' + escapeHtml(faq.answer) + '</p>' +
+          '</details>';
+      }).join('');
+
+      // Inject FAQ schema
+      if (faqSchema) {
+        var schema = {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          'mainEntity': faqs.map(function (faq) {
+            return {
+              '@type': 'Question',
+              'name': faq.question,
+              'acceptedAnswer': {
+                '@type': 'Answer',
+                'text': faq.answer
+              }
+            };
+          })
+        };
+        faqSchema.textContent = JSON.stringify(schema);
+      }
+    })
+    .catch(function () {
+      faqList.innerHTML = '<p class="loading-text">Unable to load FAQ. Please refresh.</p>';
+    });
+
 })();

@@ -442,8 +442,34 @@ a:hover {
 
 /* --- FAQ --- */
 .faq {
-  background: var(--grey-light);
+  position: relative;
+  background: url('../images/faq-bg-mobile.jpg') center center / cover no-repeat;
   padding-bottom: 72px;
+}
+
+.faq__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(59, 47, 47, 0.55) 0%, rgba(26, 122, 109, 0.35) 100%);
+  mix-blend-mode: multiply;
+}
+
+.faq__overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(230, 200, 160, 0.15);
+}
+
+.faq .container {
+  position: relative;
+  z-index: 1;
+}
+
+.faq .section__title {
+  color: var(--white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .faq__list {
@@ -455,10 +481,11 @@ a:hover {
 }
 
 .faq__item {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 12px;
-  border: 1px solid var(--grey-light);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   overflow: hidden;
+  backdrop-filter: blur(4px);
 }
 
 .faq__question {
@@ -654,6 +681,10 @@ a:hover {
     background-image: url('../images/hero-tablet.jpg');
   }
 
+  .faq {
+    background-image: url('../images/faq-bg-tablet.jpg');
+  }
+
   .menu__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -673,6 +704,10 @@ a:hover {
 @media (min-width: 900px) {
   .hero {
     background-image: url('../images/hero.jpg');
+  }
+
+  .faq {
+    background-image: url('../images/faq-bg.jpg');
   }
 
   .hero__logo {

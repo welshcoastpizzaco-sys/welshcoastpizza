@@ -19,14 +19,18 @@
   var eventsList = document.getElementById('events-list');
   var addMenuBtn = document.getElementById('add-menu-btn');
   var addEventBtn = document.getElementById('add-event-btn');
+  var addFaqBtn = document.getElementById('add-faq-btn');
   var saveMenuBtn = document.getElementById('save-menu-btn');
   var saveEventsBtn = document.getElementById('save-events-btn');
+  var saveFaqBtn = document.getElementById('save-faq-btn');
+  var faqList = document.getElementById('faq-list');
   var statusBar = document.getElementById('status-bar');
   var statusMsg = document.getElementById('status-msg');
 
   var ghToken = '';
   var menuData = [];
   var eventsData = [];
+  var faqData = [];
 
   // --- Utility: SHA-256 hash ---
   function sha256(str) {
@@ -116,12 +120,15 @@
   function loadData() {
     Promise.all([
       fetch('data/menu.json?t=' + Date.now()).then(function (r) { return r.json(); }),
-      fetch('data/events.json?t=' + Date.now()).then(function (r) { return r.json(); })
+      fetch('data/events.json?t=' + Date.now()).then(function (r) { return r.json(); }),
+      fetch('data/faq.json?t=' + Date.now()).then(function (r) { return r.json(); })
     ]).then(function (results) {
       menuData = results[0];
       eventsData = results[1];
+      faqData = results[2];
       renderMenu();
       renderEvents();
+      renderFaq();
     });
   }
 
@@ -236,7 +243,68 @@
     });
   }
 
+  // --- Render FAQ editor ---
+  function renderFaq() {
+    faqList.innerHTML = faqData.map(function (faq, i) {
+      return '<div class="editor-item" data-index="' + i + '">' +
+        '<div class="editor-item__fields">' +
+          '<div class="form__group">' +
+            '<label>Question</label>' +
+            '<input type="text" class="faq-question" value="' + escapeAttr(faq.question) + '">' +
+          '</div>' +
+          '<div class="form__group">' +
+            '<label>Answer</label>' +
+            '<textarea class="faq-answer" rows="3">' + escapeAttr(faq.answer) + '</textarea>' +
+          '</div>' +
+        '</div>' +
+        '<div class="editor-item__actions">' +
+          (i > 0 ? '<button class="btn--icon move-up" title="Move up">&#9650;</button>' : '') +
+          (i < faqData.length - 1 ? '<button class="btn--icon move-down" title="Move down">&#9660;</button>' : '') +
+          '<button class="btn btn--small btn--danger remove-faq">Remove</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    faqList.querySelectorAll('.remove-faq').forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        collectFaqData();
+        faqData.splice(i, 1);
+        renderFaq();
+      });
+    });
+    faqList.querySelectorAll('.move-up').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = parseInt(btn.closest('.editor-item').dataset.index);
+        collectFaqData();
+        var tmp = faqData[idx];
+        faqData[idx] = faqData[idx - 1];
+        faqData[idx - 1] = tmp;
+        renderFaq();
+      });
+    });
+    faqList.querySelectorAll('.move-down').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = parseInt(btn.closest('.editor-item').dataset.index);
+        collectFaqData();
+        var tmp = faqData[idx];
+        faqData[idx] = faqData[idx + 1];
+        faqData[idx + 1] = tmp;
+        renderFaq();
+      });
+    });
+  }
+
   // --- Collect form data ---
+  function collectFaqData() {
+    var items = faqList.querySelectorAll('.editor-item');
+    faqData = Array.from(items).map(function (el) {
+      return {
+        question: el.querySelector('.faq-question').value.trim(),
+        answer: el.querySelector('.faq-answer').value.trim()
+      };
+    });
+  }
+
   function collectMenuData() {
     var items = menuList.querySelectorAll('.editor-item');
     menuData = Array.from(items).map(function (el) {
@@ -271,6 +339,13 @@
     eventsData.push({ date: '', location: '', details: '' });
     renderEvents();
     eventsList.lastElementChild.querySelector('.event-date').focus();
+  });
+
+  addFaqBtn.addEventListener('click', function () {
+    collectFaqData();
+    faqData.push({ question: '', answer: '' });
+    renderFaq();
+    faqList.lastElementChild.querySelector('.faq-question').focus();
   });
 
   // --- Save to GitHub ---
@@ -334,6 +409,26 @@
       })
       .finally(function () {
         saveEventsBtn.disabled = false;
+      });
+  });
+
+  saveFaqBtn.addEventListener('click', function () {
+    collectFaqData();
+    saveFaqBtn.disabled = true;
+    showStatus('Saving FAQ...', 'saving');
+    saveFile('data/faq.json', faqData, 'Update FAQ via admin panel')
+      .then(function (res) {
+        if (res.ok) {
+          showStatus('FAQ saved! Site will redeploy in a moment.', 'success');
+        } else {
+          throw new Error('Save failed');
+        }
+      })
+      .catch(function () {
+        showStatus('Error saving FAQ. Check your token and try again.', 'error');
+      })
+      .finally(function () {
+        saveFaqBtn.disabled = false;
       });
   });
 
