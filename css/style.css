@@ -289,6 +289,10 @@ a:hover {
 }
 
 /* --- Menu --- */
+.menu .section__subtitle {
+  color: var(--red);
+}
+
 .menu {
   background: var(--grey-light);
 }
