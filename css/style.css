@@ -404,6 +404,10 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.find-us .section__subtitle {
+  color: var(--teal);
+}
+
 .find-us__cta {
   text-align: center;
   font-size: 1.05rem;
