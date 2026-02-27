@@ -341,7 +341,7 @@ a:hover {
 .menu__note {
   text-align: center;
   font-style: italic;
-  color: var(--grey-mid);
+  color: var(--charcoal);
 }
 
 /* --- Find Us / Events --- */
@@ -410,6 +410,10 @@ a:hover {
 
 .find-us .section__subtitle {
   color: var(--teal);
+}
+
+.contact .section__subtitle {
+  color: var(--charcoal);
 }
 
 .find-us__cta {
