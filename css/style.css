@@ -444,7 +444,6 @@ a:hover {
 .faq {
   position: relative;
   background: url('../images/faq-bg-mobile.jpg') center center / cover no-repeat;
-  padding-bottom: 72px;
 }
 
 .faq__overlay {
@@ -522,7 +521,7 @@ a:hover {
 
 /* --- Contact --- */
 .contact {
-  padding-bottom: 72px;
+  background: var(--cream);
 }
 
 .contact__grid {
@@ -729,9 +728,6 @@ a:hover {
     flex-direction: row;
   }
 
-  .contact {
-    padding-bottom: 96px;
-  }
 }
 
 /* ===========================
