@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welsh Coast Pizza Co. — Neapolitan Stonebaked Pizza on the Welsh Coast</title>
   <meta name="description" content="Welsh Coast Pizza Co. brings authentic Neapolitan stonebaked pizza to the beautiful Welsh coastline. Find us at popup events along the coast.">
+  <link rel="canonical" href="https://www.welshcoastpizza.co.uk/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Welsh Coast Pizza Co. — Neapolitan Stonebaked Pizza on the Welsh Coast">
+  <meta property="og:description" content="Authentic Neapolitan stonebaked pizza served at popup events along the beautiful Welsh coastline. From Pembrokeshire to the Gower.">
+  <meta property="og:url" content="https://www.welshcoastpizza.co.uk/">
+  <meta property="og:image" content="https://www.welshcoastpizza.co.uk/images/hero.jpg">
+  <meta property="og:site_name" content="Welsh Coast Pizza Co.">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Welsh Coast Pizza Co. — Neapolitan Stonebaked Pizza">
+  <meta name="twitter:description" content="Authentic Neapolitan stonebaked pizza served at popup events along the beautiful Welsh coastline.">
+  <meta name="twitter:image" content="https://www.welshcoastpizza.co.uk/images/hero.jpg">
+
+  <!-- Geographic / Local SEO -->
+  <meta name="geo.region" content="GB-WLS">
+  <meta name="geo.placename" content="Wales">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -43,7 +64,7 @@
     <div class="hero__overlay"></div>
     <div class="container hero__content">
       <img src="images/logo-220.jpeg" srcset="images/logo-220.jpeg 220w, images/logo.jpeg 440w" sizes="(min-width: 900px) 220px, 180px" alt="Welsh Coast Pizza Co." class="hero__logo">
-      <p class="hero__tagline">Neapolitan stonebaked pizza on the Welsh coast</p>
+      <h1 class="hero__tagline">Neapolitan stonebaked pizza on the Welsh coast</h1>
       <div class="hero__ctas">
         <a href="#menu" class="btn btn--primary">See Our Menu</a>
         <a href="#find-us" class="btn btn--secondary">Find Us</a>
@@ -160,6 +181,40 @@
       </div>
     </div>
   </footer>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Welsh Coast Pizza Co.",
+    "description": "Authentic Neapolitan stonebaked pizza served at popup events along the beautiful Welsh coastline.",
+    "url": "https://www.welshcoastpizza.co.uk/",
+    "logo": "https://www.welshcoastpizza.co.uk/images/logo.jpeg",
+    "image": "https://www.welshcoastpizza.co.uk/images/hero.jpg",
+    "email": "hello@welshcoastpizza.co.uk",
+    "servesCuisine": ["Neapolitan Pizza", "Italian", "Stonebaked Pizza"],
+    "priceRange": "££",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Welsh Coast",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Wales",
+        "addressCountry": "GB"
+      }
+    },
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Pizza Menu",
+      "url": "https://www.welshcoastpizza.co.uk/#menu"
+    },
+    "sameAs": [
+      "https://instagram.com",
+      "https://facebook.com"
+    ]
+  }
+  </script>
 
   <script src="js/main.js"></script>
 </body>
