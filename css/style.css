@@ -290,7 +290,7 @@ a:hover {
 
 /* --- Menu --- */
 .menu {
-  background: linear-gradient(135deg, var(--cream) 0%, #e8f0ee 40%, #f5ebe3 70%, var(--cream) 100%);
+  background: var(--grey-light);
 }
 
 .menu__grid {
