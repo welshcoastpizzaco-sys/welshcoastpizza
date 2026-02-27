@@ -32,16 +32,7 @@
     }
   }, { passive: true });
 
-  // --- Contact form handling ---
-  var form = document.getElementById('contact-form');
-
-  form.addEventListener('submit', function (e) {
-    if (form.action.includes('placeholder')) {
-      e.preventDefault();
-      alert('Thanks for your message! We\'ll get back to you soon.');
-      form.reset();
-    }
-  });
+  // --- Contact form — handled by Formsubmit.co ---
 
   // --- Load menu from JSON ---
   function escapeHtml(str) {
