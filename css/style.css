@@ -80,7 +80,8 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 65px;
+  padding: 10px 0;
+  min-height: 70px;
 }
 
 .header__logo img {
@@ -751,7 +752,7 @@ a:hover {
 
   .nav {
     position: fixed;
-    top: 65px;
+    top: 70px;
     left: 0;
     right: 0;
     background: var(--cream);
