@@ -70,6 +70,8 @@ a:hover {
   background: var(--cream);
   border-bottom: 1px solid var(--grey-light);
   transition: box-shadow 0.3s;
+  height: 70px;
+  overflow: hidden;
 }
 
 .header--scrolled {
@@ -84,7 +86,7 @@ a:hover {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
-  height: 70px;
+  height: 100%;
   box-sizing: border-box;
 }
 
