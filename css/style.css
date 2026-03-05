@@ -764,7 +764,7 @@ a:hover {
     background: var(--cream);
     border-bottom: 1px solid var(--grey-light);
     padding: 20px;
-    transform: translateY(-120%);
+    transform: translateY(calc(-100% - 70px));
     transition: transform 0.3s ease;
     z-index: 99;
   }
